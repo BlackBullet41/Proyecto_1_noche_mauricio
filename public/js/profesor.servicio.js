@@ -1,7 +1,5 @@
 'use strict';
-
-
-function registrarProyecto(paInfoProyecto){
+function registrarProyecto(){
     let respuesta = '';
     let peticion = $.ajax({
         url : 'http://localhost:4000/api/registrar_proyectos',
@@ -32,18 +30,19 @@ function registrarProyecto(paInfoProyecto){
 
       return respuesta;
 }
-function obtenerListaPersonas(){
-    let listaPersonas = [];
+
+
+function obtenerListaProyectos(){
+    let listaProyectos = [];
 
     let respuesta = '';
     let peticion = $.ajax({
-        url : 'http://localhost:4000/api/listar_usuarios',
+        url : 'http://localhost:4000/api/listar_proyectos',
         type : 'get',
         contentType : 'application/x-www-form-urlencoded; charset=utf-8',
         dataType : 'json',
         async : false,
-        data:{
-            
+        data:{    
         }
       });
     
@@ -57,5 +56,5 @@ function obtenerListaPersonas(){
 
       return respuesta;
     
-    return listaPersonas;
+    return listaProyectos;
 }

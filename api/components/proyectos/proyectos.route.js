@@ -11,7 +11,7 @@ router.route('/registrar_proyectos')
 
 router.route('/listar_proyectos')
     .get(function(req, res){
-    proyectos.listar(req, res);
+    proyectos.listarProyectos(req, res);
 });
 
 

@@ -18,20 +18,18 @@ module.exports.registrarProyecto = function (req , resp)
   
    nuevoProyecto.save(function(error)
    {
-if(error)
-    {
+    if(error) {
     resp.json
-        ({
-        succes : false,
-        msj : 'El proyecto no pudo ser registrado : ' + error
-        })
-    }else   {
+        ({ succes : false, msj : 'El proyecto no pudo ser registrado : ' + error})     
+    }else{
     resp.json
-        ({
-        succes : true,
-        msj : 'El proyecto se registro exitosamente : ' +error
-        })
-            }      
-
-   })
-}
+        ({ succes : true, msj : 'El proyecto se registro exitosamente : ' +error}) 
+        }    
+   });
+};
+module.exports.listar = function(req, res){
+    userModel.find().then(
+        function(proyectos){
+            res.send(proyectos);
+        });
+};
